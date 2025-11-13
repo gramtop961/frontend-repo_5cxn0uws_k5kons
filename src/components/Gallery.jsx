@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const images = [
   'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400',
@@ -18,12 +18,12 @@ export default function Gallery() {
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-3xl sm:text-5xl font-bold text-white">Ocean Gallery</h2>
-            <p className="mt-4 text-white/80">A glimpse of the serenity that awaits.</p>
+            <h2 className="text-3xl sm:text-5xl font-bold text-white">Galería</h2>
+            <p className="mt-4 text-white/80">Imágenes de referencia del entorno costero y estilo del alojamiento.</p>
           </div>
           <div className="hidden sm:flex gap-2">
             {images.map((_, i) => (
-              <button key={i} onClick={() => setActive(i)} className={`w-2 h-2 rounded-full ${active === i ? 'bg-white' : 'bg-white/40'}`}></button>
+              <button key={i} onClick={() => setActive(i)} aria-label={`Ir a imagen ${i+1}`} className={`w-2 h-2 rounded-full ${active === i ? 'bg-white' : 'bg-white/40'}`}></button>
             ))}
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function Gallery() {
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="relative overflow-hidden rounded-2xl border border-white/10"
             >
-              <img src={src} alt="Ocean view" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={src} alt={`Vista costera ${i+1}`} className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
             </motion.div>
           ))}
         </div>

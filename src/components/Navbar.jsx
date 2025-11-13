@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Waves, Leaf, Shell } from 'lucide-react'
+import { Menu, X, Waves, Leaf } from 'lucide-react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -16,11 +16,11 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Retreats', href: '#retreats' },
-    { label: 'Experiences', href: '#experiences' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Inicio', href: '#home' },
+    { label: 'El apartamento', href: '#retreats' },
+    { label: 'Experiencias', href: '#experiences' },
+    { label: 'Galería', href: '#gallery' },
+    { label: 'Contacto', href: '#contact' },
   ]
 
   return (
@@ -35,7 +35,7 @@ export default function Navbar() {
               <Waves className="h-6 w-6 text-cyan-300 drop-shadow" />
               <Leaf className="h-3 w-3 text-emerald-300 absolute -right-1 -bottom-1" />
             </div>
-            <span className="font-semibold text-white drop-shadow-sm tracking-wide group-hover:text-cyan-100 transition-colors">Relax by the Ocean</span>
+            <span className="font-semibold text-white drop-shadow-sm tracking-wide group-hover:text-cyan-100 transition-colors">Apto. Costa Azul</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -45,21 +45,20 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contact" className="px-4 py-2 rounded-full bg-white/10 text-white backdrop-blur border border-white/20 hover:bg-white/20 transition">
-              Book Now
+              Reservar
             </a>
           </nav>
 
           <button
             className="md:hidden p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label="Abrir menú"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden backdrop-blur-lg bg-white/10 border-t border-white/10">
           <div className="px-4 py-4 space-y-1">
@@ -74,7 +73,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contact" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md bg-white/10 text-white border border-white/20 text-center">
-              Book Now
+              Reservar
             </a>
           </div>
         </div>

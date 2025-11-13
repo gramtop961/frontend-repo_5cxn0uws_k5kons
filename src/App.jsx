@@ -15,7 +15,7 @@ function App() {
         <Experiences />
         <Gallery />
         <Contact />
-        <footer className="py-10 text-center text-white/60 border-t border-white/10 bg-[#050F14]">© {new Date().getFullYear()} Relax by the Ocean. All rights reserved.</footer>
+        <footer className="py-10 text-center text-white/60 border-t border-white/10 bg-[#050F14]">© {new Date().getFullYear()} Apto. Costa Azul. Todos los derechos reservados.</footer>
       </main>
     </div>
   )
